@@ -7,7 +7,7 @@ El proyecto desarrolla una aplicación web capaz de almacenar y analizar datos d
     Registra álbumes (título, año de lanzamiento, duración, categoría)
     Almacena canciones (título, duración, número de pista)
 
-El programa almacena los datos en archivos CSV separados que contienen la información de las bandas, albumes y canciones.
+El programa almacena los datos en la carpeta 'data' en archivos CSV separados que contienen la información de las bandas, albumes y canciones.
 La estructura es:
     bandas:
 	id: Identificador único (clave primaria)
