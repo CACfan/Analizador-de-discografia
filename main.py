@@ -127,6 +127,7 @@ elif menu == "Analizar Datos":
             bandas_filtradas = bandas_df[bandas_df["nombre"].isin(bandas_seleccionadas)]
             albumes_filtrados = albumes_df[albumes_df["banda_id"].isin(bandas_filtradas["id"])]
             total_canciones = canciones_df[canciones_df["album_id"].isin(albumes_filtrados["id"])]
+            albumes_filtrados_anno = albumes_filtrados.groupby(["banda_id", "año"], as_index=False)["titulo"].count()
             
             # Estadísticas básicas
             st.subheader("Estadísticas Básicas")
@@ -138,9 +139,9 @@ elif menu == "Analizar Datos":
             # Gráficos
             st.subheader("Álbumes por Año")
             if not albumes_filtrados.empty:
-                fig = px.bar(albumes_filtrados, x="año", y="banda_id",
+                fig = px.bar(albumes_filtrados_anno, x="año", y="titulo",
                             color="banda_id", hover_data=["titulo"],
-                            labels={'año': 'Año de lanzamiento', 'banda_id': 'Álbumes'},
+                            labels={'año': 'Año de lanzamiento', 'titulo': 'Álbumes', 'banda_id': 'Banda'},
                             title="Lanzamiento de álbumes por año")
                 st.plotly_chart(fig, use_container_width=True)
                 
