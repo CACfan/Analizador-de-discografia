@@ -10,7 +10,7 @@ El proyecto desarrolla una aplicación web capaz de almacenar y analizar datos d
 El programa almacena los datos en archivos CSV separados que contienen la información de las bandas, albumes y canciones.
 La estructura es:
     bandas:
-		id: Identificador único (clave primaria)
+	id: Identificador único (clave primaria)
         nombre: Nombre de la banda (único)
         genero: Género musical principal
         año_formacion: Año en que se formó la banda
